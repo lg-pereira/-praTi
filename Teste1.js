@@ -1,7 +1,7 @@
 /* Variáveis Globais */
 const prompt = require('prompt-sync')();
 let program;
-console.log("Bem vindo, aqui estão os 16 algoritmos criados para o teste do módulo 1.")
+console.log("Bem vindo, aqui estão os 16 algoritmos criados para o Teste 1 do módulo 1.")
 
 do {
    program = parseInt(prompt("Digite entre 1 e 16 para abrir um algoritmo, ou 404 para sair: "))
