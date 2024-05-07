@@ -8,7 +8,7 @@
     <li> Baixe o arquivo Nome_do_arquivo.js e salve em uma pasta à sua escolha </li>
     4. Abra o VSCode, clique no menu acima *Abrir*, depois *Abrir pasta* e escolha a pasta onde está salvo o arquivo *Nome_do_arquivo*.js
     <li> Seleciona o arquivo no menu lateral </li>
-    <li> Abra um terminal dentro do seu Viscose, clique em *Run*, depois *New terminal* </li>
+    <li> Abra um terminal dentro do seu VSCode, clique em *Run*, depois *New terminal* </li>
     <li> No terminal digite o comando ‘*npm install prompt-sync*’ que instalará um recurso para rodar o script </li>
     <li> No terminal digite o comando **node** *Modulo1Luiz*.*js* para executar o script </li>
     <li> Dentro do script você encontrará as instruções de como executar cada algoritmo e o que cada um faz </li>
