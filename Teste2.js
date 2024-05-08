@@ -36,6 +36,9 @@ do {
         case 5:
             console.log("Vamos jogar JoKenPo!");
             JoKenPo();
+        
+        case 6:
+            console.log("O programa mostrará")
 
     }
 
