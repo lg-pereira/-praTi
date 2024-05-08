@@ -1,0 +1,8 @@
+# Ignora a pasta node_modules
+node_modules
+
+# Ignora os arquivos .json
+*.json
+
+# Ignora o arrquivo de teste
+tmp.js
