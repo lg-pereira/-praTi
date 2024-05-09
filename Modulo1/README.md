@@ -1,4 +1,4 @@
-<h1> Conteúdo e exercício do Módulo 1 do curso Full Satck Developr JR. da +praTi & /Codifica </h1>
+<h1> Conteúdo e exercício do Módulo 1 do curso Full Stack Developer JR. da +praTi & /Codifica </h1>
 
 <h2> Para executar o arquivo dos exercícios em seu dispositivo local siga as instruções abaixo </h2>
 
