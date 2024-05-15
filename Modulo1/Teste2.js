@@ -93,7 +93,67 @@ do {
             console.log("O algoritmo vai ler 7 nomes e apresentá-los na ordem inversa.");
             _14_names();
             break;
+
+        case 15:
+            console.log("Esse programa vai ler 10 números inteiros e mostar os pares e qual posição no vetor.")
+            _15_vetor();
+            break;
+        
+        case 16:
+            console.log("O algoritmo vai mostrar um vetor com 20 números aleatórios e a seguir mostrá-los ordenados")
+            _16_vetor();
+            break;
+
+        case 17:
+            console.log("Um programa que lerá o nome e a idade de 9 pessoas e mostrará apenas os dados dos menores de idade")
+            _17_vetor();
+            break;
+
+        case 18:
+            console.log("O programa lerá o registro de um funcionário e vai escrever esse conteúdo")
+            let name = prompt("Nome: ");
+            let position = prompt("Cargo: ");
+            let salary = parseFloat(prompt("Salário: "));
+            let employee = _18_employee(name, position, salary);
+            console.log(employee);
+            break;    
+            
+        case 19: 
+            console.log("O algoritmo lerá 5 horários e vai validá-los")
+            _19_time();
+            break;
+
+        case 20:
+            console.log("Algoritmo da folhad e pagamento da indústria com 80 funcionários")
+            let employess = [];
+            _20_genWorker(employess, 80);
+            for (worker of employess){
+                console.log(`Matrícula: ${worker.matricula()} \nNome: ${worker.nome} \nSalário bruto: ${worker.bruto} \nDedução INSS: ${(worker.bruto*0.12).toFixed(2)} \nSalário Líquido: ${(worker.bruto*0.88).toFixed(2)} \n ------------------`);
+            }
+            break;
+
+        case 21:
+            console.log("O programa contém uma função que recebe a altura e o sexo de uma pessoa e retorna o seu peso ideal")
+            let height = parseFloat(prompt("Altura em metros (Ex. 1.70): "));
+            let sex = prompt("Sexo (F/M) ").toUpperCase();
+            console.log(_21_ideal(height, sex));
+            break;
+        
+        case 22:
+            console.log("Essa função retornará dados sobre uma pesquisa feita em uma cidade, sobre média salarial e número de filhos")
+            let population = parseInt(prompt("Digite a população da cidade da pesquisa: "));
+            console.log(_22_citySurvey(population));
+            break;
+
+        case 23:
+            console.log("Será criada uma matriz M[1..7,1..7] em que a diagonal principal tem valor 1 e o resto são valores nulos")
+            console.log(_23_makeMatriz(7,7));
+            break;
+
+
+
         }
+
 
 } while (program !== 404);
 
@@ -363,6 +423,148 @@ function _11_PA (p, pa) {
     console.log(`Soma: ${sum}`)
 }
 
+function _14_names () {
+    let names = [];
+    while (names.length < 7){
+        names.unshift(prompt("Digite um nome: "));
+    }
+    for (let i = 0; i < names.length; i++){
+        console.log(`Nome ${i+1}: ${names[i]}`)
+    }
+}
+
+function _15_vetor () {
+    let num; 
+    let vetor = [];
+    while (vetor.length < 10){
+        num = parseInt(prompt("Digite um número: "));
+        vetor.push(num);
+    }
+    for (let i = 0; i < vetor.length; i++){
+        if (vetor[i] % 2 === 0) {
+            console.log(`Número: ${vetor[i]} | Posição ${i}`);
+        }
+    }
+}
+
+function _16_vetor () {
+    let vetor = _randomNumbers(20, 99);
+    console.log(vetor);
+    return console.log(`Vetor ordenado: ${_bubbleSort(vetor)}`)
+}
+
+function _17_vetor () {
+    let idades = _randomNumbers(9, 80);
+    let nomes = _randomNames(9)
+    for (let i = 0; i < idades.length; i++){
+        if (idades[i] <= 18){
+            console.log(`Nome: ${nomes[i]} Idade: ${idades[i]}`)
+        }
+    }
+}
+
+function _18_employee (name, position, payment) {
+        let worker = {
+            id: _generateID(position, 999),
+            name: name,
+            position: position,
+            salary: payment
+        }
+        return worker
+}
+
+function _19_time () {
+    let time, hour, minute, seconds;
+    let i = 0;
+    while (i < 5){
+        time = parseFloat(prompt("Digite um valor de horário (Ex: 28.95): "));
+        if (!Number.isNaN(time)){
+            hour = (parseInt(time))
+            minute = time - (parseInt(time))
+                if (minute > 0.6){
+                    hour+=1
+                    minute-=0.6
+                }
+            minute*=100
+            seconds = 0;
+            console.log(`${hour}:${minute.toFixed(0)}:00`)
+        } else {
+            console.log("Valor incorreto.")
+        }
+        i++
+    }
+}
+
+function _20_genWorker (array, max) {
+    while (array.length < max){
+    let worker = {
+        nome: _randomNames(1),
+        matricula: function () {
+            return _generateID(this.nome, 999)
+        },
+        bruto: _randomNumbers(1,5000),
+    }
+    array.push(worker)
+    }
+}
+
+function _21_ideal (alt, sex) {
+    if (sex === 'M'){
+        return `Peso ideal: ${((72.7*alt)-58).toFixed(2)}`
+    } else if ( sex === 'F') {
+        return `Peso ideal: ${((62.1*alt)-44.7).toFixed(2)}`
+    } else {
+        return `Dados inválidos!`
+    }
+}
+
+function _22_citySurvey (max_population) {
+    const city = {
+     population: _randomNumbers(1, max_population),
+     citizens: [],
+     money: 0,
+     kids: 0,
+     biggerSalary: 0,
+     poor: 0
+    }
+    // Gerando dados dos moradores
+    while (city['citizens'].length < city.population){
+     let citizen = {
+         salario: parseInt(_randomNumbers(1, 2000)),
+         filhos: parseInt(_randomNumbers(1, 7))
+     }
+     city['citizens'].push(citizen)
+     }
+     for (person of city.citizens){
+         city.money += person.salario;
+         city.kids += person.filhos;
+         if (person.salario <= 350 ){
+             city.poor++
+         }
+         if (person.salario > city.biggerSalary){
+             city.biggerSalary = person.salario
+         }
+     }
+
+     return ` Média salarial: R$${(city.money/city.population).toFixed(2)} \n Média de filhos: ${Math.round(city.kids/city.population)} \n Maior Salário: R$${city.biggerSalary} \n Salário até $350: ${(city.poor/city.population*100).toFixed(2)}%`;
+}
+
+function _23_makeMatriz (lin, col){
+    let array = []
+    for (let i = 0; i < lin ; i++){
+        array.push(Array(col))
+        for (let j = 0; j < col; j++){
+            if (i === j) {
+                array[i][j]= 1
+           } else {
+               array[i][j] = null;
+            }
+        }
+   }
+    return array
+}
+
+
 function _fibonacci (n) {
     if ( n === 0) {
         return 0;
@@ -373,12 +575,86 @@ function _fibonacci (n) {
     }
 }
 
-function _14_names () {
-    let names = [];
-    while (names.length < 7){
-        names.unshift(prompt("Digite um nome: "));
+function _bubbleSort(arr){
+    let flag;
+
+    do{
+        flag = false;
+
+        for (let i = 0; i < arr.length -1 ; i++){
+            if(arr[i] > arr[i+1]){
+                const temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                flag = true;
+            }
+        }
+    } while (flag);
+    return arr;
+}
+
+function _randomNumbers (length, max){
+    let array = [];
+    let num;
+    if (length === 1){
+        num = Math.floor(Math.random()*max);
+        return num;
+    } else {
+        for (let i = 0; i < length; i++) {
+        num = Math.floor(Math.random()*max);
+        array.push(num);
+        }
     }
-    for (let i = 0; i < names.length; i++){
-        console.log(`Nome ${i+1}: ${names[i]}`)
+    return array; 
+}
+
+function _randomNames (length) {
+    const Names = [
+        "Ana", "Lucas", "Maria", "Gabriel", "Julia", "Guilherme", "Beatriz", "Matheus",
+        "Larissa", "Rafael", "Camila", "Felipe", "Amanda", "Gustavo", "Mariana", "Pedro",
+        "Bruna", "Henrique", "Fernanda", "Leonardo", "Isabela", "Bruno", "Carolina", "Eduardo",
+        "Patrícia", "Rodrigo", "Letícia", "Vinícius", "Clara", "Diego", "Vanessa", "Thiago",
+        "Daniela", "João", "Luana", "André", "Vitória", "José", "Lívia", "Francisco", "Lara",
+        "Carlos", "Alice", "Daniel", "Bianca", "Marcos", "Yasmin", "Antônio", "Isadora",
+        "Fernando", "Lorena", "Roberto", "Sofia", "Paulo", "Gabriela", "Ricardo", "Manuela",
+        "Eduarda", "Alexandre", "Luiza", "Marcelo", "Jéssica", "Fábio", "Helena", "César",
+        "Melissa", "Igor", "Natália", "Renato", "Lívia", "Sérgio", "Débora", "Rogério",
+        "Tatiane", "Raul", "Priscila", "Vitor", "Fernanda", "Samuel", "Juliana", "Adriano",
+        "Flávia", "Márcio", "Talita", "Luciano", "Paula", "Cleber", "Raquel", "Leandro",
+        "Cristiane", "Diogo", "Rebeca", "Caio", "Renata", "Otávio", "Aline", "Cássio",
+        "Simone", "Marcel", "Elisa", "Rafaela", "Tiago", "Suzana", "Hugo", "Viviane",
+        "Ítalo", "Marta", "Giovanni", "Sandra", "Elton", "Sheila", "Mauro", "Angélica",
+        "Emerson", "Rosângela", "Ivan", "Sílvia", "Geraldo", "Fabiana", "Arthur", "Luciana",
+        "Jorge", "Eliane", "André", "Carla", "Cristiano", "Sabrina", "Gilberto", "Michele",
+        "Sidney", "Tânia", "Wagner", "Denise", "Lauro", "Esther", "Saulo", "Glória",
+        "Kevin", "Jaqueline", "Lucas", "Solange", "Júlio", "Diana", "Leandro", "Márcia",
+        "Nelson", "Sônia", "Oscar", "Vera", "Pablo", "Silvana", "Nilton", "Olívia",
+        "Quirino", "Norma", "Romeu", "Pâmela", "Sandro", "Queila", "Tomás", "Rita",
+        "Ulisses", "Sara", "Valdir", "Tereza", "Washington", "Úrsula", "Xavier", "Vânia",
+        "Yuri", "Wanessa", "Ziraldo", "Xênia", "Afonso", "Yolanda", "Benício", "Zuleica",
+        "Caíque", "Alana", "Davi", "Bárbara", "Elias", "Cecília", "Fabrício", "Dalila",
+        "Gustavo", "Elaine", "Heitor", "Fátima", "Ícaro", "Graziela", "Jair", "Hortência",
+        "Kleber", "Íris", "Laerte", "Janete", "Milton", "Kelly", "Nícolas", "Luna",
+        "Orlando", "Mônica", "Pietro", "Nair", "Quintino", "Odete", "Rômulo", "Pérola",
+        "Salvador", "Quitéria", "Túlio", "Rosana", "Ubirajara", "Sílvia", "Vladimir", "Talita",
+        "Wilson", "Úrsula", "Yago", "Valquíria", "Zeno", "Wilma"
+    ];
+    let array = [];
+    let num;
+    if (length === 1){
+        num = Math.floor(Math.random()*(Names.length-1));
+        return Names[num];
+    } else {
+        for (let i = 0; i < length; i++) {
+            num = Math.floor(Math.random()*(Names.length-1));
+            array.push(Names[num]);
+        }
     }
+    return array; 
+}
+
+function _generateID (word, maxnumber){
+    let tmp = _randomNumbers(2,maxnumber);
+    tmp.push(...word);
+    return `${tmp[2]+tmp[0]+tmp[1]}`
 }
