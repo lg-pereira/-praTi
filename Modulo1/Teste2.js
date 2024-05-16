@@ -4,30 +4,30 @@ let program;
 console.log("Bem vindo, aqui estão os 50 algoritmos criados para o Teste 2 do módulo 1.");
 
 do {
-    program = parseInt(prompt("Digite entre 1 e 50 para abrir um algoritmo, ou 404 para sair: "));
+    program = parseInt(prompt("Digite entre 1 e 49 para abrir um algoritmo, ou 404 para sair: "));
 
     switch(program){
         case 1:
-            console.log("Esse algoritmo irá calcular a redução do tempo de vida de um fumante." );
+            console.log("\nEsse algoritmo irá calcular a redução do tempo de vida de um fumante." );
             _1_lostLife();
             break;
 
         case 2:
-            console.log("O programa irá informar se você foi multado e o valor de uma multa.");
+            console.log("\nO programa irá informar se você foi multado e o valor de uma multa.");
             let speed = parseInt(prompt("Digite a velocidade do carro: "));
             let fine = speed > 80 ? `Sua multa é de R$ ${(speed-80)*5}` : "Parabéns por ser um bom condutor!";
             console.log(fine);
             break;
 
         case 3:
-            console.log("Este algoritmo calculará o valor da viagem de acordo com a distância a ser percorrida.");
+            console.log("\nEste algoritmo calculará o valor da viagem de acordo com a distância a ser percorrida.");
             let distance = parseFloat(prompt("Informe a distância de sua viagem em KM: "));
             let ticket = distance <= 200 ? 0.5 * distance : 0.45 * distance;
             console.log(`O valor da sua viagem é de R$ ${ticket.toFixed(2)}`);
             break;
 
         case 4:
-            console.log("Esse algoritmo vai ler o tamanho de três segmentos de reta e dizer se é possível formar um triângulo.");
+            console.log("\nEsse algoritmo vai ler o tamanho de três segmentos de reta e dizer se é possível formar um triângulo.");
             let line01 = parseInt(prompt("Informe o valor da linha 1: "));
             let line02 = parseInt(prompt("Informe o valor da linha 2: "));
             let line03 = parseInt(prompt("Informe o valor da linha 3: "));
@@ -35,51 +35,51 @@ do {
             break;
 
         case 5:
-            console.log("Vamos jogar JoKenPo!");
+            console.log("\nVamos jogar JoKenPo!");
             _5_playJoKenPo();
             break;
         
         case 6:
-            console.log("O algoritmo vai gerar um número de 1 a 5 que você terá que acertar");
+            console.log("\nO algoritmo vai gerar um número de 1 a 5 que você terá que acertar");
             _6_guessNumber();
             break;
 
         case 7:
-            console.log("Conheça o programa de aluguel de carros.");
+            console.log("\nConheça o programa de aluguel de carros.");
             _7_carRent();
             break;
 
         case 8:
-            console.log("Veja o algoritmo para Vida Saudável.");
+            console.log("\nVeja o algoritmo para Vida Saudável.");
             _8_healtRewards();
             break;
         
         case 9:
-            console.log("O algoritmo lerá o salário e sexo de vários funcionários e vai apresentar o total pago dividido por sexo");
+            console.log("\nO algoritmo lerá o salário e sexo de vários funcionários e vai apresentar o total pago dividido por sexo");
             _9_paymentFM();
             break;
         
         case 10:
-            console.log("Digite números e obtenha ao final a média, soma, menor valor digitado e quantos são pares");
+            console.log("\nDigite números e obtenha ao final a média, soma, menor valor digitado e quantos são pares");
             _10_listNumbers();
             break;
 
         case 11:
-            console.log("Esse programa vai ler um número inicial e uma razão de PA e depois apresentar os 10 primeiros elementos e a soma total deles.");
+            console.log("\nEsse programa vai ler um número inicial e uma razão de PA e depois apresentar os 10 primeiros elementos e a soma total deles.");
             let start = parseFloat(prompt("Número inicial: "));
             let razao = parseFloat(prompt("Razão: "));
             _11_PA(start, razao);
             break;
         
         case 12:
-            console.log("O algoritmo vai imprimir os 10 primeiros elementos da sequência de Fibonacci.")
+            console.log("\nO algoritmo vai imprimir os 10 primeiros elementos da sequência de Fibonacci.")
             for (let i = 0; i < 10; i++){
                 console.log(_fibonacci(i));
             }
             break;
             
         case 13:
-            console.log("Esse programa vai gerar um vetor com os 15 primeiros elementos da sequência de Fibonacci.")
+            console.log("\nEsse programa vai gerar um vetor com os 15 primeiros elementos da sequência de Fibonacci.")
             let list_fibonacci = [];
             let counter = 0;
             while (list_fibonacci.length <= 15){
@@ -90,27 +90,27 @@ do {
             break;
         
         case 14:
-            console.log("O algoritmo vai ler 7 nomes e apresentá-los na ordem inversa.");
+            console.log("\nO algoritmo vai ler 7 nomes e apresentá-los na ordem inversa.");
             _14_names();
             break;
 
         case 15:
-            console.log("Esse programa vai ler 10 números inteiros e mostar os pares e qual posição no vetor.")
+            console.log("\nEsse programa vai ler 10 números inteiros e mostar os pares e qual posição no vetor.")
             _15_vetor();
             break;
         
         case 16:
-            console.log("O algoritmo vai mostrar um vetor com 20 números aleatórios e a seguir mostrá-los ordenados")
+            console.log("\nO algoritmo vai mostrar um vetor com 20 números aleatórios e a seguir mostrá-los ordenados")
             _16_vetor();
             break;
 
         case 17:
-            console.log("Um programa que lerá o nome e a idade de 9 pessoas e mostrará apenas os dados dos menores de idade")
+            console.log("\nUm programa que lerá o nome e a idade de 9 pessoas e mostrará apenas os dados dos menores de idade")
             _17_vetor();
             break;
 
         case 18:
-            console.log("O programa lerá o registro de um funcionário e vai escrever esse conteúdo")
+            console.log("\nO programa lerá o registro de um funcionário e vai escrever esse conteúdo")
             let name = prompt("Nome: ");
             let position = prompt("Cargo: ");
             let salary = parseFloat(prompt("Salário: "));
@@ -119,12 +119,12 @@ do {
             break;    
             
         case 19: 
-            console.log("O algoritmo lerá 5 horários e vai validá-los")
+            console.log("\nO algoritmo lerá 5 horários e vai validá-los")
             _19_time();
             break;
 
         case 20:
-            console.log("Algoritmo da folhad e pagamento da indústria com 80 funcionários")
+            console.log("\nAlgoritmo da folha de pagamento da indústria com 80 funcionários")
             let employess = [];
             _20_genWorker(employess, 80);
             for (worker of employess){
@@ -133,23 +133,69 @@ do {
             break;
 
         case 21:
-            console.log("O programa contém uma função que recebe a altura e o sexo de uma pessoa e retorna o seu peso ideal")
+            console.log("\nO programa contém uma função que recebe a altura e o sexo de uma pessoa e retorna o seu peso ideal")
             let height = parseFloat(prompt("Altura em metros (Ex. 1.70): "));
             let sex = prompt("Sexo (F/M) ").toUpperCase();
             console.log(_21_ideal(height, sex));
             break;
         
         case 22:
-            console.log("Essa função retornará dados sobre uma pesquisa feita em uma cidade, sobre média salarial e número de filhos")
+            console.log("\nEssa função retornará dados sobre uma pesquisa feita em uma cidade,\nsobre média salarial e número de filhos (os valores serão gerados aleatóriamente)")
             let population = parseInt(prompt("Digite a população da cidade da pesquisa: "));
             console.log(_22_citySurvey(population));
             break;
 
         case 23:
-            console.log("Será criada uma matriz M[1..7,1..7] em que a diagonal principal tem valor 1 e o resto são valores nulos")
+            console.log("\nSerá criada uma matriz M[1..7,1..7] em que a diagonal principal tem valor 1 e o resto são valores nulos")
             console.log(_23_makeMatriz(7,7));
             break;
 
+        case 24:
+            console.log("\nO algoritmo vai apresentar um vetor C que contém a quantidade de elementos negativos das linhas da matriz M")
+            let matriz_24 = _makeMatriz(6, 8, -25, 25);
+            console.log(_24_matriz(matriz_24));
+            break;
+
+        case 25:
+            console.log("\nO algoritmo vai montar uma matriz 15x20 e mostrará a soma de cada coluna")
+            let matriz25 = _makeMatriz(15, 20, 1, 10);
+            _25_sumMatriz(matriz25);
+            break;
+
+        case 26:
+            console.log("\nO programa vai calcular o produto da matriz A 3x5 com a Matriz B 5x3")
+            let arr26_1 = _makeMatriz (3, 5, 2, 20);
+            let arr26_2 = _makeMatriz (5, 3, 2, 20);
+            const matriz_26 = _multiplyMatriz(arr26_1, arr26_2);
+            console.log(matriz_26);
+            break;
+            
+        case 27:
+            console.log("\nO programa vai receber uma matriz 6x6 e multiplicar pelo valor A. \n Após apresentará o resultado num vetor V(36)")
+            let matriz_27 = _makeMatriz(6, 6, -50, 50);
+            let value_27 = parseInt(prompt("Digite um multiplicador: "));
+            const vetor_27 = _27_multiply(matriz_27, value_27);
+            console.log(vetor_27);
+            break;
+
+        case 28:
+            console.log("\nEsse algoritmo vai receber uma matriz 10x10 e apresentará os dados: ")
+            let matriz_28 = _makeMatriz(10, 10, 1, 50);
+            _28_matriz(matriz_28);
+            break;
+
+        case 29:
+            console.log("O algoritmo lerá uma matriz 5x5 e calculará as somas:")
+            let matriz_29 = _makeMatriz(5, 5, 1, 5);
+            _29_sumMatriz(matriz_29);
+            break;
+
+        case 30:
+            console.log("O algoritmo lê uma matriz M(5,5) e cria 2 vetores SL(5) e SC(5) com a soma das linhas e colunas")
+            let matriz_30 = _makeMatriz(5, 5, 1, 5);
+            _30_sumMatriz(matriz_30);
+            break;
+    
 
 
         }
@@ -448,16 +494,16 @@ function _15_vetor () {
 }
 
 function _16_vetor () {
-    let vetor = _randomNumbers(20, 99);
+    let vetor = _randomNumbers(20, 1, 99);
     console.log(vetor);
     return console.log(`Vetor ordenado: ${_bubbleSort(vetor)}`)
 }
 
 function _17_vetor () {
-    let idades = _randomNumbers(9, 80);
+    let idades = _randomNumbers(9, 1, 80);
     let nomes = _randomNames(9)
     for (let i = 0; i < idades.length; i++){
-        if (idades[i] <= 18){
+        if (idades[i] < 18){
             console.log(`Nome: ${nomes[i]} Idade: ${idades[i]}`)
         }
     }
@@ -502,7 +548,7 @@ function _20_genWorker (array, max) {
         matricula: function () {
             return _generateID(this.nome, 999)
         },
-        bruto: _randomNumbers(1,5000),
+        bruto: _randomNumbers(1, 100, 5000),
     }
     array.push(worker)
     }
@@ -520,7 +566,7 @@ function _21_ideal (alt, sex) {
 
 function _22_citySurvey (max_population) {
     const city = {
-     population: _randomNumbers(1, max_population),
+     population: _randomNumbers(1, 100, max_population),
      citizens: [],
      money: 0,
      kids: 0,
@@ -530,8 +576,8 @@ function _22_citySurvey (max_population) {
     // Gerando dados dos moradores
     while (city['citizens'].length < city.population){
      let citizen = {
-         salario: parseInt(_randomNumbers(1, 2000)),
-         filhos: parseInt(_randomNumbers(1, 7))
+         salario: parseInt(_randomNumbers(1, 1, 2000)),
+         filhos: parseInt(_randomNumbers(1, 0, 7))
      }
      city['citizens'].push(citizen)
      }
@@ -564,6 +610,132 @@ function _23_makeMatriz (lin, col){
     return array
 }
 
+function _24_matriz(array) {
+    let C = [];
+    for (let i = 0; i < array.length-1; i++){
+        C.push(0);
+        for (n of array[i]){
+            if (n < 0){
+                C[i]++
+            }
+        }
+    }
+    return C
+}
+
+function _25_sumMatriz(array) {
+    let j = 0
+    while (j < array[0].length) {
+        let sum = 0;
+    for (let i = 0; i < array.length; i++){
+            sum += (array[i][j])
+        }
+        console.log(`Soma da coluna ${j+1}: ${sum}`)
+        j++
+    }
+}
+
+function _27_multiply (array, value) {
+    let result = [];
+    for (n of array){
+        for (number of n){
+            result.push(number*value)
+        }
+    }
+    return result
+}
+
+function _28_matriz(array){
+    let sumA = 0;
+    let sumB = 0;
+    for (let i = 0; i < array.length ; i++){
+        for (let j = 0; j < array[i].length; j++){
+            if (i === j-1) {
+               sumA += array[i][j]
+            } else if (i === j+1 ){
+               sumB += array[i][j];
+            }
+        }
+   }
+   console.log(` A) Soma dos elementos acima da diagonal principal: ${sumA} \n B) Soma dos elementos abaixo da diagonal principal ${sumB}`)
+}
+
+function _29_sumMatriz (array){
+    
+    const sumA = () => {
+        let sum = 0;
+        array[3].forEach(number => {
+            sum += number
+        })  
+        return `A) da linha 4 da matriz: ${sum}`
+    };
+    const sumB = () => {
+        let sum = 0;
+        for (line of array) {
+            for (col in line){
+                if (col == 1){
+                    sum += line[col]
+                }
+            }
+        }
+        return `B) da coluna 2 da matriz: ${sum}`
+    }
+    const sumC = () => {
+        let sum = 0;
+        for (line of array) {
+            let lin = array.indexOf(line)
+            for (col in line){
+                let co = col
+                if (col == lin){
+                    sum += array[lin][col]
+                }
+            }
+        }
+        return `C) da diagonal principal da matriz: ${sum}`
+    }
+    const sumD = () => {
+        let sum = 0;
+        for (line of array) {
+            for (col of line){
+                sum += col
+            }
+        }
+        return `C) de todos os elementos da matriz: ${sum}`
+    }
+    console.log (`${sumA()}\n${sumB()}\n${sumC()}\n${sumD()}\n`)
+    console.log(array)
+}
+
+function _30_sumMatriz (array){
+
+    const sumC = () => {
+        let arr = [];
+        let j = 0
+        while (j < array[0].length) {
+            let sum = 0;
+        for (let i = 0; i < array.length; i++){
+                sum += (array[i][j])
+            }
+            arr.push(sum)
+            j++
+        }
+        return arr
+    };
+
+    const sumL = () => {
+        let arr = [];
+        for (line of array) {
+            let sum = 0;
+            for (col of line){
+                 sum += col
+                }
+                arr.push(sum)
+            }
+            return arr
+    };
+        console.log(array)
+        console.log (`${sumC()}\n${sumL()}\n`)
+}
 
 function _fibonacci (n) {
     if ( n === 0) {
@@ -593,16 +765,15 @@ function _bubbleSort(arr){
     return arr;
 }
 
-function _randomNumbers (length, max){
+function _randomNumbers (length, min, max){
     let array = [];
     let num;
     if (length === 1){
-        num = Math.floor(Math.random()*max);
-        return num;
+        return Math.round(Math.random() * (max - min) + min);
     } else {
         for (let i = 0; i < length; i++) {
-        num = Math.floor(Math.random()*max);
-        array.push(num);
+            num = Math.round(Math.random() * (max - min) + min);
+            array.push(num);
         }
     }
     return array; 
@@ -654,7 +825,32 @@ function _randomNames (length) {
 }
 
 function _generateID (word, maxnumber){
-    let tmp = _randomNumbers(2,maxnumber);
+    let tmp = _randomNumbers(2, 100, maxnumber);
     tmp.push(...word);
     return `${tmp[2]+tmp[0]+tmp[1]}`
+}
+
+function _makeMatriz (lin, col, minValue, maxValue){
+    let array = []
+    for (let i = 0; i < lin ; i++){
+            array[i]= _randomNumbers(col, minValue, maxValue)
+        }
+    return array
+}
+
+function _multiplyMatriz(arr1, arr2) {
+    let result = [];
+    for (let i = 0; i < arr1.length; i++) {
+        result[i] = [];
+        for (let j = 0; j < arr2[0].length; j++) {
+            let sum = 0;
+            for (let k = 0; k < arr1[0].length; k++) {
+                let arr1p = arr1[i][k]
+                let arr2p = arr2[k][j]
+                sum += arr1[i][k] * arr2[k][j];
+            }
+            result[i][j] = sum;
+        }
+    }
+    return result;
 }
